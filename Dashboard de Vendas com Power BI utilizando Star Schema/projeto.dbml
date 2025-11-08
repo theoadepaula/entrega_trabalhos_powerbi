@@ -1,0 +1,84 @@
+Project universidade_dw {
+  database_type: 'MySQL'
+  Note: 'Modelo Dimensional (Star Schema) para análise da docência de professores.'
+}
+
+// =========================================================
+// 1. DIMENSÃO DATA
+// =========================================================
+Table Dim_Data as D {
+  SK_Data_Oferta int [pk, note: 'Chave Substituta (YYYYMMDD)']
+  Data_Completa date [not null]
+  Ano smallint [not null]
+  Mes smallint [not null]
+  Nome_Mes varchar(15) [not null]
+  Dia_Semana varchar(10) [not null]
+  Trimestre smallint [not null]
+  Semestre smallint [not null]
+  Feriado_Flag char(1) [default: 'N']
+}
+
+// =========================================================
+// 2. DIMENSÃO PROFESSOR
+// =========================================================
+Table Dim_Professor as P {
+  SK_Professor int [pk, increment]
+  ID_Professor int [not null, note: 'Chave de Negócio']
+  Nome_Professor varchar(100) [not null]
+  ID_Departamento int [not null]
+  Departamento_Nome varchar(45)
+  Departamento_Campus varchar(45)
+  Professor_Coordenador_Flag char(1) [default: 'N']
+}
+
+// =========================================================
+// 3. DIMENSÃO CURSO
+// =========================================================
+Table Dim_Curso as C {
+  SK_Curso int [pk, increment]
+  ID_Curso int [not null, note: 'Chave de Negócio']
+  Nome_Curso varchar(100) [not null]
+  ID_Departamento_Curso int [not null]
+  Tipo_Graduacao varchar(50) [default: 'Não Definido']
+}
+
+// =========================================================
+// 4. DIMENSÃO DISCIPLINA
+// =========================================================
+Table Dim_Disciplina as Di {
+  SK_Disciplina int [pk, increment]
+  ID_Disciplina int [not null, note: 'Chave de Negócio']
+  Nome_Disciplina varchar(100) [not null]
+  Carga_Horaria int
+  Tipo_Requisito varchar(20) [default: 'Nenhum']
+}
+
+// =========================================================
+// 5. TABELA FATO CENTRAL
+// =========================================================
+Table Fato_Docencia_Disciplina as F {
+  // Chaves Estrangeiras (Dimensões)
+  SK_Professor int [not null]
+  SK_Disciplina int [not null]
+  SK_Curso int [not null]
+  SK_Data_Oferta int [not null]
+
+  // Métricas (Measures)
+  Contagem_Disciplina int [not null, note: 'Medida aditiva: sempre 1 por oferta.']
+  Numero_Alunos_Matriculados int [note: 'Métrica hipotética para análise']
+  Carga_Horaria_Disciplina int [note: 'Métrica não aditiva (obtida da dimensão)']
+
+  // Definição da Chave Primária Composta
+  indexes {
+    (SK_Professor, SK_Disciplina, SK_Curso, SK_Data_Oferta) [pk]
+  }
+}
+
+// =========================================================
+// RELACIONAMENTOS (Chaves Estrangeiras)
+// =========================================================
+
+Ref: F.SK_Professor > P.SK_Professor
+Ref: F.SK_Disciplina > Di.SK_Disciplina
+Ref: F.SK_Curso > C.SK_Curso
+Ref: F.SK_Data_Oferta > D.SK_Data_Oferta
