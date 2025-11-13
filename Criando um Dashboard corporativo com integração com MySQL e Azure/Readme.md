@@ -58,5 +58,3 @@ As transformações seguiram as diretrizes do desafio para limpar, enriquecer e 
 * **Agrupamento:** Os dados foram agrupados para contar o número de colaboradores por gerente.
 * **Eliminação de Colunas:** Colunas desnecessárias (que não seriam usadas no relatório) foram eliminadas de cada tabela.
 
----
-*Este projeto demonstra a habilidade de integrar infraestrutura Cloud, processar dados com Power Query e prepará-los para um modelo analítico eficaz.*
