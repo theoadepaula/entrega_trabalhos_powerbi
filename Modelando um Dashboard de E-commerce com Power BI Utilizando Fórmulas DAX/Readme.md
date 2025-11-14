@@ -1,12 +1,12 @@
-# 📊 Desafio de Projeto: Modelagem Dimensional no Power BI (Financial Sample)
+# Desafio de Projeto: Modelagem Dimensional no Power BI (Financial Sample)
 
-## 📌 Visão Geral do Projeto
+## Visão Geral do Projeto
 
 Este projeto demonstra a capacidade de transformar uma base de dados transacional ou "flat" (a tabela `Financial Sample`) em um **Modelo Dimensional (Star Schema)** utilizando o **Power Query** e **DAX** no Power BI.
 
 O objetivo principal é otimizar a performance analítica e facilitar a criação de relatórios, separando as informações contextuais (Dimensões) das informações mensuráveis (Fatos).
 
-### 🎯 Objetivos de Aprendizado
+### Objetivos de Aprendizado
 * Aplicar o conceito de *Star Schema* (Esquema em Estrela).
 * Utilizar o **Power Query** para limpeza, agrupamento e criação de Chaves de Negócio.
 * Criar Chaves Substitutas (SKs) e associá-las para construir o modelo.
@@ -14,7 +14,7 @@ O objetivo principal é otimizar a performance analítica e facilitar a criaçã
 
 ---
 
-## 🛠️ Tecnologias e Base de Dados
+## Tecnologias e Base de Dados
 
 | Categoria | Detalhe |
 | :--- | :--- |
@@ -24,7 +24,7 @@ O objetivo principal é otimizar a performance analítica e facilitar a criaçã
 
 ---
 
-## ⚙️ Processo de Construção do Diagrama
+## Processo de Construção do Diagrama
 
 A modelagem seguiu as diretrizes do desafio, partindo de uma única tabela (`Financial Sample`) e utilizando o Power Query para criar múltiplas consultas, limpando e transformando cada uma delas em uma Dimensão ou Tabela Fato.
 
@@ -66,7 +66,7 @@ A dimensão de tempo foi criada utilizando a linguagem **DAX** no Power BI Deskt
 
 ---
 
-## 🖼️ Esquema em Estrela (Star Schema)
+## Esquema em Estrela (Star Schema)
 
 Após todas as transformações, o modelo de dados foi finalizado, onde a tabela `F_Vendas` está no centro, ligada diretamente às suas dimensões.
 
@@ -74,7 +74,7 @@ Após todas as transformações, o modelo de dados foi finalizado, onde a tabela
 
 ---
 
-## 🚀 Entregáveis Finais
+## Entregáveis Finais
 
 * Arquivo do projeto Power BI (`.pbix`).
 * Imagem do modelo de dados (Esquema em Estrela).
