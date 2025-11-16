@@ -1,4 +1,4 @@
-# Desafio de Projeto: Processando e Transformando Dados com Power BI Analyst
+# Desafio de Projeto: Criando um Dashboard corporativo com integração com MySQL e Azure
 
 ## Visão Geral do Projeto
 
