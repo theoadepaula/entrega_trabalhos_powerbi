@@ -61,7 +61,7 @@ A Tabela Fato representa a granularidade das vendas (cada linha é uma transaç�
 ### 4. Tabela de Data (`D_Calendário`)
 A dimensão de tempo foi criada utilizando a linguagem **DAX** no Power BI Desktop.
 
-* **Função DAX Utilizada:** `CALENDAR(MIN('F_Vendas'[Date]), MAX('F_Vendas'[Date]))` (ou similar, como `CALENDARAUTO()`).
+* **Função DAX Utilizada:** `CALENDAR(MIN('F_Vendas'[Date]), MAX('F_Vendas'[Date]))`.
 * **Enriquecimento:** Colunas adicionais (`Ano`, `Mês`, `Trimestre`, etc.) foram criadas usando `ADDCOLUMNS` e funções DAX de data (`YEAR`, `MONTH`, etc.) para permitir a análise temporal em diferentes níveis de granularidade.
 
 ---
@@ -70,7 +70,7 @@ A dimensão de tempo foi criada utilizando a linguagem **DAX** no Power BI Deskt
 
 Após todas as transformações, o modelo de dados foi finalizado, onde a tabela `F_Vendas` está no centro, ligada diretamente às suas dimensões.
 
-**(Inclua aqui a imagem do seu modelo de dados no Power BI)**
+![Star Schema](Modelando um Dashboard de E-commerce com Power BI Utilizando Fórmulas DAX/projeto_ecommerce_star_schema.png)
 
 ---
 
