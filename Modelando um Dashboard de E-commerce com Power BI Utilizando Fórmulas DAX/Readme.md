@@ -1,4 +1,4 @@
-# Desafio de Projeto: Modelagem Dimensional no Power BI (Financial Sample)
+# Modelando um Dashboard de E-commerce com Power BI Utilizando Fórmulas DAX
 
 ## Visão Geral do Projeto
 
