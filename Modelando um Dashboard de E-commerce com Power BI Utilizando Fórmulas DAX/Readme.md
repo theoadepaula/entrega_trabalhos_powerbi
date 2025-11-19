@@ -70,7 +70,7 @@ A dimensão de tempo foi criada utilizando a linguagem **DAX** no Power BI Deskt
 
 Após todas as transformações, o modelo de dados foi finalizado, onde a tabela `F_Vendas` está no centro, ligada diretamente às suas dimensões.
 
-![Star Schema](Modelando um Dashboard de E-commerce com Power BI Utilizando Fórmulas DAX/projeto_ecommerce_star_schema.png)
+![Modelando um Dashboard de E-commerce com Power BI Utilizando Fórmulas DAX/projeto_ecommerce_star_schema.png](https://github.com/theoadepaula/entrega_trabalhos_powerbi/blob/452cbcef489cdcda9a07a2f1c303b3dbc9e227a7/Modelando%20um%20Dashboard%20de%20E-commerce%20com%20Power%20BI%20Utilizando%20F%C3%B3rmulas%20DAX/projeto_ecommerce_star_schema.png)
 
 ---
 
